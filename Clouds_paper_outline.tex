@@ -17,6 +17,7 @@
 \def\degree{$^{\circ}$}
 \def\herschel{{\em Herschel}}
 \def\spire{\herschel-SPIRE}
+\def\higal{Hi-GAL}
 \def\pacs{\herschel-PACS}
 \def\spitzer{{\em Spitzer}}
 \def\mic{$\umu$m}
@@ -45,25 +46,58 @@ Abstract
 \section{Introduction}
 Infrared dark clouds (IRDCs) were first observed as dark regions
 silhouetted against the mid-infrared (MIR) background
-\citep{Wilcock2011}. Subsequent observations showed them to have low
-temperatures and high densities ($T\lesssim$\,K, $n_H > 10^5$\,cm$^-3$,
+\citep{Wilcock2012a} by \emph{Infrared Space Observatory} \citep{ISO}
+and \emph{Midcourse Space Experiment} \citep{ISO}. Subsequent
+observations showed them to have low temperatures and high densities
+($T\lesssim$\,K, $n_H > 10^5$\,cm$^-3$,
 e.g.~\citet{Egan98,Carey98,HennebellePerault02}). The IRDC absorbs the
 background light and causes a dip in the MIR sky brightness. They are
 thought to be the earliest observable formation stages high-mass stars
 and stellar clusters.
 
-With MIR data alone, however, it is impossible to distinguish this
-absorption from a region of inherently lower background
-emission. Far-Infared (FIR) observations allow IRDCs, which appear
-bright at wavelengths above 24\,\mic, to be distinguished from regions
-of lower emission, which remain dark. 
+Following the initial surveys, the MIPSGAL and GLIMPSE surveys used
+the IRAC and MIPS instuments on \spitzer allowed the compilation of
+larger and more complete catalogues (e.g. \citet{PF09}). With MIR data
+alone, however, it is impossible to distinguish this absorption from a
+region of inherently lower background emission. Far-Infared (FIR)
+observations allow IRDCs, which appear bright at wavelengths above
+24\,\mic, to be distinguished from regions of lower emission, which
+remain dark -- a 'hole in the sky'
+(e.g. \citet{Stanke2010_NGC1999}). It is important to identifying
+which of the candidate IRDCs in the catalogues are 'true' dark clouds,
+and which are simply holes in the sky. Such interlopers would bias any
+statistical studies of IRDCs based on these catalogues.
 
+The HIGAL survey, using the SPIRE and PACS instrument on-board
+the \emph{Herschel Space Observatory}, covered a $|b|\le 1\deg$ strip
+of the entire Galactic Plane at 70, 160, 250, 350 and 500\,\mic. Using
+the 8 and 24\,\mic\ data from GLIMPSE and MIPSGAL, combined with the
+longer wavelength data from HIGAL, it is, in princple, possible to
+distinguish which objects are clouds and which are holes.
 
-\section{Input catalogue}
-Describe catalogue (Fuller \& Peretto)
-Spitzer \& Herschel Hi-Gal observations
+\subsection{Input catalogue}
+This study uses candidate IRDCs in the inner regions of the Galactic
+Plane (the first and fourth quadrants). We use two catalogues based on
+MIR data from the MSX and \spitzer\ surveys (\citet{Simon06,PF09}),
+and add to that FIR data from the \herschel HI-GAL survey. The
+\citet{Simon06} catalogue (henceforth S06) uses 8\,\mic\ MSX data to
+identify over 10000 IRDCs in the region defined by $|l| < 90^{\circ}$
+and $|b|<5^{\circ}$. This was restricted to IRDCs greater than 36'' in
+size (limited by the 20'' resolution of MSX) and with a sensitivity of
+1.2\,MJy/sr. The \citet{PF09} catalogue (henceforth PF09), used
+\spitzer\ 8 and 24\,\mic\ data in the region defined by $10^{\circ} <
+|l| < 65^{\circ}$ and $|b|<1^{\circ}$. While \spitzer\ data had better
+resolution and sensitivity (2'' and 0.3 MJy/sr at 8\,\mic), it covered
+a smaller region of the Galactic Plane. The \higal\ survey covers the
+full Galactic Plane within $|b|<1^{\circ}$, with a resolution of
+$\sim18''$ at 250\,\mic.
 
-Number of objects etc.
+Sources included in this study require coverage at both 8 and
+24\,\mic. They are selected from PF09, along with sources from S06
+which are not within 25'' of a PF09 source. This results in 9931
+sources from PF09 (4123 in the range $0 < l < 90$ and 5808 in the
+range $270 < l < 360$) and 5731 from S06 (2672 in the range $0 < l <
+90$ and 3059 in the range $270 < l < 360$).
 
 \section{Analysis}
 Brief outline of analysis
