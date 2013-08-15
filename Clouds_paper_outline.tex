@@ -22,18 +22,24 @@
 \def\spitzer{{\em Spitzer}}
 \def\mic{$\umu$m}
 
-\title{Clouds Paper}
+\title{Milky Way Project : Clouds and Holes Paper}
 
-\author[The world]{R.~Simpson$^1$, c.~J.~Lintott$^1$, C.~E.~North$^2$ et al.
-\\
-$^1$Oxford
-$^2$Cardiff
-}
+\author[Simpson et al.]
+{\parbox{\textwidth}{R. J. Simpson$^{1}$\thanks{Email: robert.simpson@astro.ox.ac.uk},
+C.~J.~Lintott$^{1,2}$,
+C.~E.~North$^3$,
+and friends...}\vspace{0.8cm}\\
+\parbox{\textwidth}{
+$^{1}$Oxford Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK \\
+$^{2}$Astronomy Department, Adler Planetarium, 1300 S. Lake Shore Drive, Chicago, IL 60605, USA \\
+$^{3}$Department of Physics and Astronomy, Cardiff University, 5 The Parade, Cardiff, CF24 3YB }}
+
+
 \begin{document}
 
 \date{Accepted 20xx. Received 20xx.}
 
-\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2012}
+\pagerange{\pageref{firstpage}--\pageref{lastpage}} \pubyear{2013}
 
 \maketitle
 
@@ -105,7 +111,30 @@ Brief outline of analysis
 \subsection{Milky Way Project}
 The Milky Way Project\footnote{http://www.milkywayproject.org} was established in 2010 as a citizen science interface to data from the \emph{Spitzer} GLIMPSE survey primarily as a search for `bubbles' associated with massive star formation. This effort was successful, and a catalogue of more than 5000 such bubbles which expanded on previous efforts by professional astronomers was published by \citet{Simpsonetal} and used for a statistical analysis of bubble distribution by \citet{Kendrewetal}. Inspired by this success, a second interface was added to the site in order to address the problem of identifying true IRDCs.
 
-As with the previous interface, this new part of the site\footnote{http://www.milkywayproject.org/clouds} makes use of the Zooniverse Application Programming Interface (API) originally built for Galaxy Zoo \citep{Lintottetal} and which supports a large number of similar citizen science projects. This API is primarily responsible for serving images and recording classifications provided by volunteers, who are required to be logged in for their work to be recorded. Following a short tutorial, an image is selected from the database\footnote{Volunteers see an image they have not yet classified, selected randomly from those with the fewest classifications in the database. This algorithm for task assignment has the advantage of ensuring that images have approximately the same number of classifications at all times, facilitating preliminary data analysis.} and presented to the volunteer who may label it as a \textsc{cloud}, a \textsc{hole} or an \textsc{intermediate} case by selecting one of three buttons. 
+As with the previous interface, this new part of the site\footnote{http://www.milkywayproject.org/clouds} makes use of the Zooniverse Application Programming Interface (API) originally built for Galaxy Zoo \citep{Lintottetal} and which supports a large number of similar citizen science projects. This API is primarily responsible for serving images and recording classifications provided by volunteers, who are required to be logged in for their work to be recorded. The interface itself is built in JavaScript and HTML5. Following a short tutorial, an image is selected from the database\footnote{Volunteers see an image they have not yet classified, selected randomly from those with the fewest classifications in the database. This algorithm for task assignment has the advantage of ensuring that images have approximately the same number of classifications at all times, facilitating preliminary data analysis.} and presented to the volunteer who may label it as a \textsc{cloud}, a \textsc{hole} or an \textsc{intermediate} case by selecting one of three buttons, as shown in figure \ref{fig:interface}. Examples of both clouds and holes are provided during the tutorial phase and can be reviewed at any time; these examples are shown in \ref{fig:ex} in both colour schemes available to classifiers. Once an image is classified, the volunteer is shown another image and presented with the opportunity to discuss the first image with other classifers\footnote{See http://talk.milkywayproject.org}. 
+
+\begin{figure}
+\includegraphics[angle=0,width=0.5\textwidth]{Interface.png}
+\caption{The interface for the Clouds part of the Milky Way Project, as seen by classifiers who had to sort each image into one of three categories.}\label{fig:interface}
+\end{figure}
+
+DETAILS OF IMAGES AND IMAGE CONSTRUCTION.. Participants can chose to alter the colour palette presented (DO WE RECORD IF PEOPLE USE THIS OPTION?)
+
+\begin{figure}
+\includegraphics[angle=0,width=0.4\textwidth]{./images/website_examples/cloud1.jpg}
+\includegraphics[angle=0,width=0.4\textwidth]{./images/website_examples/cloud2.jpg}
+\includegraphics[angle=0,width=0.4\textwidth]{./images/website_examples/cloud3.jpg}
+\includegraphics[angle=0,width=0.4\textwidth]{./images/website_examples/hole1.jpg}
+\includegraphics[angle=0,width=0.4\textwidth]{./images/website_examples/hole2.jpg}
+\includegraphics[angle=0,width=0.4\textwidth]{./images/website_examples/hole3.jpg}
+\caption{Top three rows : Three of the nine examples of true clouds used in the tutorial. Bottom three rows : Examples of holes given in the tutorial. The tutorial did not include examples of 'intermediate' images.}\label{fig:ex}
+\end{figure}
+
+
+The clouds project was launched on XXXXXXX and ran until XXXXXXX, collecting 1.1 million classifications. 3544 logged-in users provided classifications. However, approximately half of the classifications were received from those who were not logged in. The most active user has completed 59020 classifications and is one of three users to have seen every image provided. (HOW DO WE HANDLE THE REPEATS IN DATA REDUCTION). 3253 classifiers provided more than five classifications (91.9\%, compared to 25\% in the previous incarnation of the Milky Way Project), 1843 more than fifty (52.0\% compared to 5.7\%) and 168 five hundred classifications or more. 
+
+DETAILS OF NON-LOGGED IN USERS
+
 
 MWP interface and initial results (or in results section?)
 User and classification numbers and duration of dataset used
@@ -123,6 +152,36 @@ Thumbnails of training data and classifications
 Expert versus general results (plot)
 
 \subsection{Analysis sequence}
+
+\subsubsection{What has been done}
+
+All the 1.1 million classifications are run through sequentially in time.
+
+Issues caused because users have three options - cloud, hole or intermediate. (see GZ argument about non-classified galaxies). All clouds start with an initial score of 0.5, which is updated based on the user's skill level. Skill level is determined by users encountering training data. 
+
+Note that the tutorial doesn't really say much about intermediates - or at least it only says the button exists. We should therefore expect a wide range of user behaviours - including those who use it as a 'don't know' alongside those who genuinely only use it for intermediate. This means that weighting is important for this category (?). 
+
+The training data is currently a set of `definite' clouds and `definite' holes assembled by RS - these were assembled by expert review of the top (approx) 200 at each end. NEED MORE RIGOROUS
+
+How do we treat the intermediate classifications? 
+
+	Option A : A third genuine category - therefore need expert data with all three classifications in order to distinguish between the confused and those who are classifying something as intermediate. Cuts are needed for each population producing three lists (which might overlap). 
+	
+	Option B : Treat cloud to hole as a continuous distribution where somethings are definitely (p=1) clouds, some definitely (p=0) holes but most lie somewhere in between. In this model intermediate votes signify p=0.5. In other words we're forcing a discrete estimate of probability.This produces a catalogue including all the objects with the best value probability for each one to which thresholds can be applied. 
+	
+	(Option C : Ignore the intermediate classifications) We might want to test the effect of adding the intermediate button). 
+	
+	Possible changes to training set :
+	
+		i. Add a set of `definite' intermediate objects reviewed by experts as existing set. Give these the `correct' value of 0.5 and adjust user skill levels accordingly.
+		
+		ii. Get N experts to classify - award 1 for cloud, 0.5 for intermediate, 0 for hole, take average - adjust user skill level for being close to the average. Close to be defined (might want N to be even so 0.5 can be a 'correct' answer). 
+		
+		iii. Get expert assign numerical value (e.g. 0.7). This won't work as people - even experts - are crap at this (and because it's not really a linear continuous scale). 
+		
+		
+	
+
 The procedure
 Growth charts
 Results of MC runs
@@ -142,7 +201,9 @@ Full table of results
 
 
 \section{Acknowledgements}
-\chck{Zooniverse acknowledgements}
+This publication has been made possible by the participation of more than 40,000 volunteers on the Milky Way Project. Their contributions are acknowledged individually at http://www.milkywayproject.org/authors. The Milky Way Project, and R.J.S. were supported by The Leverhulme Trust. Development of the MWP was partly supported by the National Science Foundation CDI grant: DRL-0941610. 
+
+This work is based on observations made with the Spitzer Space Telescope, which is operated by the Jet Propulsion Laboratory, California Institute of Technology under a contract with NASA. This research has made use of the SIMBAD database, operated at CDS, Strasbourg, France.
 
 {\em Herschel} is an ESA space observatory with science instruments
 provided by European-led Principal Investigator consortia and with important
