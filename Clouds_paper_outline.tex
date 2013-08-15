@@ -21,12 +21,13 @@
 \def\spitzer{{\em Spitzer}}
 \def\mic{$\umu$m}
 
-\title{Clouds Paper}
+\title{Milky Way Project : Clouds and Holes Paper}
 
-\author[The world]{R.~Simpson$^1$, c.~J.~Lintott$^1$, C.~E.~North$^2$ et al.
+\author[Simpson et al.]{R.~Simpson$^1$, C.~J.~Lintott$^{1,2}$, C.~E.~North$^3$ et al.
 \\
 $^1$Oxford
-$^2$Cardiff
+$^2$Adler
+$^3$Cardiff
 }
 \begin{document}
 
@@ -71,7 +72,19 @@ Brief outline of analysis
 \subsection{Milky Way Project}
 The Milky Way Project\footnote{http://www.milkywayproject.org} was established in 2010 as a citizen science interface to data from the \emph{Spitzer} GLIMPSE survey primarily as a search for `bubbles' associated with massive star formation. This effort was successful, and a catalogue of more than 5000 such bubbles which expanded on previous efforts by professional astronomers was published by \citet{Simpsonetal} and used for a statistical analysis of bubble distribution by \citet{Kendrewetal}. Inspired by this success, a second interface was added to the site in order to address the problem of identifying true IRDCs.
 
-As with the previous interface, this new part of the site\footnote{http://www.milkywayproject.org/clouds} makes use of the Zooniverse Application Programming Interface (API) originally built for Galaxy Zoo \citep{Lintottetal} and which supports a large number of similar citizen science projects. This API is primarily responsible for serving images and recording classifications provided by volunteers, who are required to be logged in for their work to be recorded. Following a short tutorial, an image is selected from the database\footnote{Volunteers see an image they have not yet classified, selected randomly from those with the fewest classifications in the database. This algorithm for task assignment has the advantage of ensuring that images have approximately the same number of classifications at all times, facilitating preliminary data analysis.} and presented to the volunteer who may label it as a \textsc{cloud}, a \textsc{hole} or an \textsc{intermediate} case by selecting one of three buttons. Examples of both clouds and holds are provided on the classification page. 
+As with the previous interface, this new part of the site\footnote{http://www.milkywayproject.org/clouds} makes use of the Zooniverse Application Programming Interface (API) originally built for Galaxy Zoo \citep{Lintottetal} and which supports a large number of similar citizen science projects. This API is primarily responsible for serving images and recording classifications provided by volunteers, who are required to be logged in for their work to be recorded. The interface itself is built in JavaScript and HTML5. Following a short tutorial, an image is selected from the database\footnote{Volunteers see an image they have not yet classified, selected randomly from those with the fewest classifications in the database. This algorithm for task assignment has the advantage of ensuring that images have approximately the same number of classifications at all times, facilitating preliminary data analysis.} and presented to the volunteer who may label it as a \textsc{cloud}, a \textsc{hole} or an \textsc{intermediate} case by selecting one of three buttons, as shown in figure \ref{fig:interface}. Examples of both clouds and holes are provided during the tutorial phase and can be reviewed at any time. Once an image is classified, the volunteer is shown another image and presented with the opportunity to discuss the first image with other classifers\footnote{See http://talk.milkywayproject.org}. 
+
+\begin{figure}
+\includegraphics[angle=0,width=0.5\textwidth]{Interface.png}
+\caption{The interface for the Clouds part of the Milky Way Project, as seen by classifiers who had to sort each image into one of three categories.}
+\end{figure}
+
+DETAILS OF IMAGES AND IMAGE CONSTRUCTION.. Participants can chose to alter the colour palette presented (DO WE RECORD IF PEOPLE USE THIS OPTION?)
+
+The clouds project was launched on XXXXXXX and ran until XXXXXXX. 3544 logged-in users provided classifications. However, approximately half of the classifications were received from those who were not logged in. The most active user has completed 59020 classifications and is one of three users to have seen every image provided. (HOW DO WE HANDLE THE REPEATS IN DATA REDUCTION). 3253 classifiers provided more than five classifications (91.9\%, compared to 25\% in the previous incarnation of the Milky Way Project), 1843 more than fifty (52.0\% compared to 5.7\%) and 168 five hundred classifications or more. 
+
+DETAILS OF NON-LOGGED IN USERS
+
 
 MWP interface and initial results (or in results section?)
 User and classification numbers and duration of dataset used
