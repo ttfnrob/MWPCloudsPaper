@@ -124,7 +124,7 @@ All the 1.1 million classifications are run through sequentially in time.
 
 Issues caused because users have three options - cloud, hole or intermediate. (see GZ argument about non-classified galaxies). All clouds start with an initial score of 0.5, which is updated based on the user's skill level. Skill level is determined by users encountering training data. 
 
-Note that the tutorial doesn't really say much about intermediates - or at least it only says the button exists. We should therefore expect a wide range of user behaviours - including those who use it as a 'don't know' alongside those who genuinely only use it for intermediate. This means that weighting is important for this category (?). 
+Note that the tutorial doesn't really say much about intermediates - or at least it only says the button exists. We should therefore expect a wide range of user behaviours - including those who use it as a `don't know' alongside those who genuinely only use it for intermediate. This means that weighting is important for this category (?). 
 
 The training data is currently a set of `definite' clouds and `definite' holes assembled by RS - these were assembled by expert review of the top (approx) 200 at each end. NEED MORE RIGOROUS
 
@@ -140,12 +140,9 @@ How do we treat the intermediate classifications?
 	
 		i. Add a set of `definite' intermediate objects reviewed by experts as existing set. Give these the `correct' value of 0.5 and adjust user skill levels accordingly.
 		
-		ii. Get N experts to classify - award 1 for cloud, 0.5 for intermediate, 0 for hole, take average - adjust user skill level for being close to the average. Close to be defined (might want N to be even so 0.5 can be a 'correct' answer). 
+		ii. Get N experts to classify - award 1 for cloud, 0.5 for intermediate, 0 for hole, take average - adjust user skill level for being close to the average. Close to be defined (might want N to be even so 0.5 can be a `correct' answer). 
 		
 		iii. Get expert assign numerical value (e.g. 0.7). This won't work as people - even experts - are crap at this (and because it's not really a linear continuous scale). 
-		
-		
-	
 
 The procedure
 Growth charts
