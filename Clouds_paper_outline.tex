@@ -147,7 +147,20 @@ Histogram of results?
 
 In order to turn the more than one million classifications into a useful scientific catalogue, it is necessary to determine consensus classifications. This process typically involves assigning a weight to each classifier based on their behaviour. For example, the weighting scheme in \citet{Lintott} rewards those who agree with the consensus, minimizing the effect of extreme or erratic classifiers, while \citet{Schwamb} use synthetic data to provide an objective measure of classifier performance. The Milky Way Project bubble catalogue described in \citet{Simpson} used user behaviour on the site as a strong indication of expertise, discarding classifications from those who, for example, only ever marked circular rather than elliptical bubbles. 
 
-This paper introduces a generalized approach to user weighting based on performance against a set of expert-classified `gold standard' data, described below. Images with expert data available were presented randomly alongside the rest of the dataset. However, because of the high mean number of classifications per user it is possible to use an approach in which only those who have seen such images have adjusted weightings. This avoids the complication of requiring an iterative approach to user weightings (as in \citet{Lintott} and \citet{Schwamb}) and allows us to take into account changes in user accuracy over time. Such changes are expected to be significant, particularly at the start of a volunteer's classification career (see \citet{EdwinSimpson} for a discussion of citizen science user trajectories). 
+This paper introduces a generalized approach to user weighting based on performance against a set of expert-classified `gold standard' data, described below. Images with expert data available were presented randomly alongside the rest of the dataset. However, because of the high mean number of classifications per user it is possible for this project to use an approach in which only those who have seen such images have adjusted weightings. This avoids the complication of requiring an iterative approach to user weightings (as in \citet{Lintott} and \citet{Schwamb}) and allows us to take into account changes in user accuracy over time. Such changes are expected to be significant, particularly at the start of a volunteer's classification career (see \citet{EdwinSimpson} for a discussion of citizen science user trajectories). 
+
+To generate a gold standard dataset a naive consensus for each image (in which all classifiers are treated equally) was first calculated. Those images which had the highest votes in each category (\textsc{cloud}, \textsc{intermediate} or \textsc{hole}) were inspected by one of the authors (RS) with correctly classified images being retained. In all, XXXXX of each type were included, and a list of those sources included in the training sets is given in table \ref{tab:gold}. 
+
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline
+\textsc{cloud} & \textsc{intermediate} & \textsc{hole}\\
+\hline
+Source ID & Source ID & Source ID\\
+\hline
+\end{tabular}
+\caption{List of sources in the `gold standard' training set for each of the three categories}\label{tab:gold}
+\end{table}
 
 Definition of training data definition
 
@@ -157,15 +170,22 @@ Expert versus general results (plot)
 
 \subsection{Analysis sequence}
 
-\subsubsection{What has been done}
+The presence of an intermediate category into which images can be sorted raises questions of interpretation. It is not intended to represent a separate category of object which is in some sense truly intermediate between an IRDC and a `hole', but rather the situation where it is difficult (or impossible) to distinguish between the two extreme cases. We can think of the situation in terms of probabilities; a classifier choosing the `cloud' button is asserting that the probability that the object being classified is, or is close to, 1. Viewed this way, a classifier choosing the `intermediate' classification is asserting that the image does not allow them to make a judgement about the probability the image represents a cloud. In such circumstances, a valid choice is to maintain our prior assessment of the probability, typically (in the absence of other classifications, p=0.5 is chosen). 
+
+In order to be able to assess the effect of the intermediate category, we first use only classifications from the other two buttons. This leaves XXXXXX, roughly two-thirds of the original classifications. 
+
+[HOW UNEVEN WERE THE INTERMEDIATE CLASSIFICATIONS OVER SUBJECTS]
+
+
+
+
+\subsubsection{Notes from 15th August}
 
 All the 1.1 million classifications are run through sequentially in time.
 
 Issues caused because users have three options - cloud, hole or intermediate. (see GZ argument about non-classified galaxies). All clouds start with an initial score of 0.5, which is updated based on the user's skill level. Skill level is determined by users encountering training data. 
 
 Note that the tutorial doesn't really say much about intermediates - or at least it only says the button exists. We should therefore expect a wide range of user behaviours - including those who use it as a 'don't know' alongside those who genuinely only use it for intermediate. This means that weighting is important for this category (?). 
-
-The training data is currently a set of `definite' clouds and `definite' holes assembled by RS - these were assembled by expert review of the top (approx) 200 at each end. NEED MORE RIGOROUS
 
 How do we treat the intermediate classifications? 
 
