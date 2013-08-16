@@ -17,6 +17,7 @@
 \def\degree{$^{\circ}$}
 \def\herschel{{\em Herschel}}
 \def\spire{\herschel-SPIRE}
+\def\higal{Hi-GAL}
 \def\pacs{\herschel-PACS}
 \def\spitzer{{\em Spitzer}}
 \def\mic{$\umu$m}
@@ -32,6 +33,7 @@ and friends...}\vspace{0.8cm}\\
 $^{1}$Oxford Astrophysics, Denys Wilkinson Building, Keble Road, Oxford, OX1 3RH, UK \\
 $^{2}$Astronomy Department, Adler Planetarium, 1300 S. Lake Shore Drive, Chicago, IL 60605, USA \\
 $^{3}$Department of Physics and Astronomy, Cardiff University, 5 The Parade, Cardiff, CF24 3YB }}
+
 
 \begin{document}
 
@@ -50,25 +52,58 @@ Abstract
 \section{Introduction}
 Infrared dark clouds (IRDCs) were first observed as dark regions
 silhouetted against the mid-infrared (MIR) background
-\citep{Wilcock2011}. Subsequent observations showed them to have low
-temperatures and high densities ($T\lesssim$\,K, $n_H > 10^5$\,cm$^-3$,
+\citep{Wilcock2012a} by \emph{Infrared Space Observatory} \citep{ISO}
+and \emph{Midcourse Space Experiment} \citep{ISO}. Subsequent
+observations showed them to have low temperatures and high densities
+($T\lesssim$\,K, $n_H > 10^5$\,cm$^-3$,
 e.g.~\citet{Egan98,Carey98,HennebellePerault02}). The IRDC absorbs the
 background light and causes a dip in the MIR sky brightness. They are
 thought to be the earliest observable formation stages high-mass stars
 and stellar clusters.
 
-With MIR data alone, however, it is impossible to distinguish this
-absorption from a region of inherently lower background
-emission. Far-Infared (FIR) observations allow IRDCs, which appear
-bright at wavelengths above 24\,\mic, to be distinguished from regions
-of lower emission, which remain dark. 
+Following the initial surveys, the MIPSGAL and GLIMPSE surveys used
+the IRAC and MIPS instuments on \spitzer allowed the compilation of
+larger and more complete catalogues (e.g. \citet{PF09}). With MIR data
+alone, however, it is impossible to distinguish this absorption from a
+region of inherently lower background emission. Far-Infared (FIR)
+observations allow IRDCs, which appear bright at wavelengths above
+24\,\mic, to be distinguished from regions of lower emission, which
+remain dark -- a 'hole in the sky'
+(e.g. \citet{Stanke2010_NGC1999}). It is important to identifying
+which of the candidate IRDCs in the catalogues are 'true' dark clouds,
+and which are simply holes in the sky. Such interlopers would bias any
+statistical studies of IRDCs based on these catalogues.
 
+The HIGAL survey, using the SPIRE and PACS instrument on-board
+the \emph{Herschel Space Observatory}, covered a $|b|\le 1\deg$ strip
+of the entire Galactic Plane at 70, 160, 250, 350 and 500\,\mic. Using
+the 8 and 24\,\mic\ data from GLIMPSE and MIPSGAL, combined with the
+longer wavelength data from HIGAL, it is, in princple, possible to
+distinguish which objects are clouds and which are holes.
 
-\section{Input catalogue}
-Describe catalogue (Fuller \& Peretto)
-Spitzer \& Herschel Hi-Gal observations
+\subsection{Input catalogue}
+This study uses candidate IRDCs in the inner regions of the Galactic
+Plane (the first and fourth quadrants). We use two catalogues based on
+MIR data from the MSX and \spitzer\ surveys (\citet{Simon06,PF09}),
+and add to that FIR data from the \herschel HI-GAL survey. The
+\citet{Simon06} catalogue (henceforth S06) uses 8\,\mic\ MSX data to
+identify over 10000 IRDCs in the region defined by $|l| < 90^{\circ}$
+and $|b|<5^{\circ}$. This was restricted to IRDCs greater than 36'' in
+size (limited by the 20'' resolution of MSX) and with a sensitivity of
+1.2\,MJy/sr. The \citet{PF09} catalogue (henceforth PF09), used
+\spitzer\ 8 and 24\,\mic\ data in the region defined by $10^{\circ} <
+|l| < 65^{\circ}$ and $|b|<1^{\circ}$. While \spitzer\ data had better
+resolution and sensitivity (2'' and 0.3 MJy/sr at 8\,\mic), it covered
+a smaller region of the Galactic Plane. The \higal\ survey covers the
+full Galactic Plane within $|b|<1^{\circ}$, with a resolution of
+$\sim18''$ at 250\,\mic.
 
-Number of objects etc.
+Sources included in this study require coverage at both 8 and
+24\,\mic. They are selected from PF09, along with sources from S06
+which are not within 25'' of a PF09 source. This results in 9931
+sources from PF09 (4123 in the range $0 < l < 90$ and 5808 in the
+range $270 < l < 360$) and 5731 from S06 (2672 in the range $0 < l <
+90$ and 3059 in the range $270 < l < 360$).
 
 \section{Analysis}
 Brief outline of analysis
@@ -76,7 +111,7 @@ Brief outline of analysis
 \subsection{Milky Way Project}
 The Milky Way Project\footnote{http://www.milkywayproject.org} was established in 2010 as a citizen science interface to data from the \emph{Spitzer} GLIMPSE survey primarily as a search for `bubbles' associated with massive star formation. This effort was successful, and a catalogue of more than 5000 such bubbles which expanded on previous efforts by professional astronomers was published by \citet{Simpsonetal} and used for a statistical analysis of bubble distribution by \citet{Kendrewetal}. Inspired by this success, a second interface was added to the site in order to address the problem of identifying true IRDCs.
 
-As with the previous interface, this new part of the site\footnote{http://www.milkywayproject.org/clouds} makes use of the Zooniverse Application Programming Interface (API) originally built for Galaxy Zoo \citep{Lintottetal} and which supports a large number of similar citizen science projects. This API is primarily responsible for serving images and recording classifications provided by volunteers, who are required to be logged in for their work to be recorded. The interface itself is built in JavaScript and HTML5. Following a short tutorial, an image is selected from the database\footnote{Volunteers see an image they have not yet classified, selected randomly from those with the fewest classifications in the database. This algorithm for task assignment has the advantage of ensuring that images have approximately the same number of classifications at all times, facilitating preliminary data analysis.} and presented to the volunteer who may label it as a \textsc{cloud}, a \textsc{hole} or an \textsc{intermediate} case by selecting one of three buttons, as shown in figure \ref{fig:interface}. Examples of both clouds and holes are provided during the tutorial phase and can be reviewed at any time; these examples are shown in \ref{fig:ex} in both colour schemes available to classifiers. Once an image is classified, the volunteer is shown another image and presented with the opportunity to discuss the first image with other classifers\footnote{See http://talk.milkywayproject.org}. 
+As with the previous interface, this new part of the site\footnote{http://www.milkywayproject.org/clouds} makes use of the Zooniverse Application Programming Interface (API) originally built for Galaxy Zoo \citep{Lintottetal} and which supports a large number of similar citizen science projects. This API is primarily responsible for serving images and recording classifications provided by volunteers, who are required to be logged in for their work to be recorded. The interface itself is built in JavaScript and HTML5. Following a short tutorial, an image is selected from the database\footnote{Volunteers see an image they have not yet classified, selected randomly from those with the fewest classifications in the database. This algorithm for task assignment has the advantage of ensuring that images have approximately the same number of classifications at all times, facilitating preliminary data analysis.} and presented to the volunteer who may label it as a \textsc{cloud}, a \textsc{hole} or an \textsc{intermediate} case by selecting one of three buttons, as shown in figure \ref{fig:interface}. Examples of both clouds and holes are provided during the tutorial phase and can be reviewed at any time; these examples are shown in \ref{fig:ex} in both colour schemes available to classifiers. Once an image is classified, the volunteer is shown another image and presented with the opportunity to discuss the first image with other classifiers\footnote{See http://talk.milkywayproject.org}. 
 
 \begin{figure}
 \includegraphics[angle=0,width=0.5\textwidth]{Interface.png}
@@ -107,9 +142,26 @@ User and classification numbers and duration of dataset used
 Raw classifications?
 Histogram of results?
 
-Thumnail examples of clouds, holes and unknowns
 
 \subsection{Experts and Training data}
+
+In order to turn the more than one million classifications into a useful scientific catalogue, it is necessary to determine consensus classifications. This process typically involves assigning a weight to each classifier based on their behaviour. For example, the weighting scheme in \citet{Lintott} rewards those who agree with the consensus, minimizing the effect of extreme or erratic classifiers, while \citet{Schwamb} use synthetic data to provide an objective measure of classifier performance. The Milky Way Project bubble catalogue described in \citet{Simpson} used user behaviour on the site as a strong indication of expertise, discarding classifications from those who, for example, only ever marked circular rather than elliptical bubbles. 
+
+This paper introduces a generalized approach to user weighting based on performance against a set of expert-classified `gold standard' data, described below. Images with expert data available were presented randomly alongside the rest of the dataset. However, because of the high mean number of classifications per user it is possible for this project to use an approach in which only those who have seen such images have adjusted weightings. This avoids the complication of requiring an iterative approach to user weightings (as in \citet{Lintott} and \citet{Schwamb}) and allows us to take into account changes in user accuracy over time. Such changes are expected to be significant, particularly at the start of a volunteer's classification career (see \citet{EdwinSimpson} for a discussion of citizen science user trajectories). 
+
+To generate a gold standard dataset a naive consensus for each image (in which all classifiers are treated equally) was first calculated. Those images which had the highest votes in each category (\textsc{cloud}, \textsc{intermediate} or \textsc{hole}) were inspected by one of the authors (RS) with correctly classified images being retained. In all, XXXXX of each type were included, and a list of those sources included in the training sets is given in table \ref{tab:gold}. 
+
+\begin{table}
+\begin{tabular}{|c|c|c|}
+\hline
+\textsc{cloud} & \textsc{intermediate} & \textsc{hole}\\
+\hline
+Source ID & Source ID & Source ID\\
+\hline
+\end{tabular}
+\caption{List of sources in the `gold standard' training set for each of the three categories}\label{tab:gold}
+\end{table}
+
 Definition of training data definition
 
 Thumbnails of training data and classifications
@@ -118,15 +170,22 @@ Expert versus general results (plot)
 
 \subsection{Analysis sequence}
 
-\subsubsection{What has been done}
+The presence of an intermediate category into which images can be sorted raises questions of interpretation. It is not intended to represent a separate category of object which is in some sense truly intermediate between an IRDC and a `hole', but rather the situation where it is difficult (or impossible) to distinguish between the two extreme cases. We can think of the situation in terms of probabilities; a classifier choosing the `cloud' button is asserting that the probability that the object being classified is, or is close to, 1. Viewed this way, a classifier choosing the `intermediate' classification is asserting that the image does not allow them to make a judgement about the probability the image represents a cloud. In such circumstances, a valid choice is to maintain our prior assessment of the probability, typically (in the absence of other classifications, p=0.5 is chosen). 
+
+In order to be able to assess the effect of the intermediate category, we first use only classifications from the other two buttons. This leaves XXXXXX, roughly two-thirds of the original classifications. 
+
+[HOW UNEVEN WERE THE INTERMEDIATE CLASSIFICATIONS OVER SUBJECTS]
+
+
+
+
+\subsubsection{Notes from 15th August}
 
 All the 1.1 million classifications are run through sequentially in time.
 
 Issues caused because users have three options - cloud, hole or intermediate. (see GZ argument about non-classified galaxies). All clouds start with an initial score of 0.5, which is updated based on the user's skill level. Skill level is determined by users encountering training data. 
 
 Note that the tutorial doesn't really say much about intermediates - or at least it only says the button exists. We should therefore expect a wide range of user behaviours - including those who use it as a `don't know' alongside those who genuinely only use it for intermediate. This means that weighting is important for this category (?). 
-
-The training data is currently a set of `definite' clouds and `definite' holes assembled by RS - these were assembled by expert review of the top (approx) 200 at each end. NEED MORE RIGOROUS
 
 How do we treat the intermediate classifications? 
 
@@ -182,5 +241,8 @@ development has been supported by national funding agencies: CSA
 
 This research made use of APLpy, an open-source plotting package for
 Python hosted at http://aplpy.github.com
+
+\bibliographystyle{mn2e}
+\bibliography{Clouds_bibCN}
 
 \end{document}
